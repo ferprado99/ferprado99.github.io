@@ -1,0 +1,130 @@
+{
+  "source": "Informe_Auditorio_Fer_Prado_canonica_v10.html",
+  "assets": [
+    {
+      "path": "img/01-fer-prado-operacion-tecnica-de-sonido.png",
+      "sha256": "dd55f6873963b2256494e2f8e361d16fb892f752e2806884b0ab2a9b2cdd9f14",
+      "bytes": 11048
+    },
+    {
+      "path": "img/02-focusrite-scarlett-2i2-vista-frontal.webp",
+      "sha256": "5c211f5d1d65c8830b06c026f5752667ee519e8c8e2154b8a699ba1b57d5cc22",
+      "bytes": 67728
+    },
+    {
+      "path": "img/03-focusrite-scarlett-2i2-vista-trasera.webp",
+      "sha256": "e5a9def3b95814c061dd4a03083570e27138658af3512602b65702bae34d4f4e",
+      "bytes": 23800
+    },
+    {
+      "path": "img/04-focusrite-scarlett-2i2-vista-en-perspectiva.webp",
+      "sha256": "54e702621dd4f149e89da86ffbf2a3fa1c21e51b46950f1cbd5aeb69a16ad21a",
+      "bytes": 75518
+    },
+    {
+      "path": "img/05-behringer-u-phoria-umc202-vista-frontal.webp",
+      "sha256": "4a6ed72ee0de30353fd427ebe417345c7529c06c0537d5ded2d66943d3171888",
+      "bytes": 59660
+    },
+    {
+      "path": "img/06-behringer-u-phoria-umc202-vista-trasera.webp",
+      "sha256": "2480c544933bfc129113f47ee77458c340ddb8c128ab732059b6695b3eecdc3b",
+      "bytes": 24898
+    },
+    {
+      "path": "img/07-behringer-u-phoria-umc202-vista-en-perspectiva.webp",
+      "sha256": "e6e60d8ab1b0a46037b769f9f33cf5cd4affd990bb07dacab355a5c3d5bffc4f",
+      "bytes": 64126
+    },
+    {
+      "path": "img/08-tascam-us-2x2hr-vista-frontal.webp",
+      "sha256": "9c054811f5446d48e3835af1f7e22ec63bb89b97a988050a9f8e1762d7bacf02",
+      "bytes": 127610
+    },
+    {
+      "path": "img/09-tascam-us-2x2hr-vista-trasera.webp",
+      "sha256": "8e3ddd9f0563eac32a4e1bbf0e25147f2bdca65c1979260d589ac52ab0e3622b",
+      "bytes": 76178
+    },
+    {
+      "path": "img/10-tascam-us-2x2hr-vista-en-perspectiva.webp",
+      "sha256": "a2fa70e7d61b654a657eb6929905e3a37a6b7dd09ee23ae7472191ce90a57950",
+      "bytes": 105556
+    },
+    {
+      "path": "img/11-cable-trs-balanceado-con-conectores-trs-de-6-3-m.png",
+      "sha256": "465dab1334b124877a1d5c796a9a7857b47c427777bba50b570d93373bfdeb8b",
+      "bytes": 239489
+    },
+    {
+      "path": "img/12-cable-estereo-en-y-un-conector-trs-de-6-3-mm-y-d.png",
+      "sha256": "7ad696fe6258900759b4029f1f153b757f9ae46670b21ec31b7d8b0c824c340c",
+      "bytes": 541281
+    },
+    {
+      "path": "img/13-cable-balanceado-xlr-con-conector-macho-y-hembra.png",
+      "sha256": "f27c0fac145bc9d85d1151aa0d9f1dffb2fd13fd9fbc9907b3b20f92b71863da",
+      "bytes": 280711
+    },
+    {
+      "path": "img/14-pc-de-escritorio.png",
+      "sha256": "29c19f06d957cf26f4e4a6538c2b9af1cbe77c1df638b662d82d85ec22da7874",
+      "bytes": 1690509
+    },
+    {
+      "path": "img/15-cable-usb.png",
+      "sha256": "7c04824aaf3eecfce4bd30ae65a3b857b6045ce4d8915dd0c585f739a2efa2ff",
+      "bytes": 7192
+    },
+    {
+      "path": "img/16-interfaz-de-audio-focusrite-scarlett-2i2.png",
+      "sha256": "0ac92e200813defaacd4996b0a421d26daad2ff016401a4a03d362ad94cc6931",
+      "bytes": 2019729
+    },
+    {
+      "path": "img/17-cable-trs-a-dos-ts-en-y.png",
+      "sha256": "c96607a262a42eb1c8ec5e368b7d8bbde9208e688bbfef1f86a71355bf53d4e2",
+      "bytes": 985488
+    },
+    {
+      "path": "img/18-consola-behringer-x-air-xr12.webp",
+      "sha256": "214ad653c47c4ae92ead4955474448bfe10fc775520d5a473332aefa12739d17",
+      "bytes": 50106
+    },
+    {
+      "path": "img/19-firma-de-fernando-prado.png",
+      "sha256": "20bfc569160c900f730f56cb16bf60587aed0f08f1ddbf4cafab63d61ef23447",
+      "bytes": 41486
+    },
+    {
+      "path": "fonts/fuente-01.woff2",
+      "sha256": "828f4525c741b6864718e41aa23a4acbc049b35e6271317c0fd86e0702dd5d2e",
+      "bytes": 12672
+    },
+    {
+      "path": "fonts/fuente-02.woff2",
+      "sha256": "fe939dd66a07071f0c39f76af3986a64cb8344b0dce2e3ae8c0897c1fbdb417f",
+      "bytes": 14376
+    },
+    {
+      "path": "fonts/fuente-03.woff2",
+      "sha256": "0dbe07ed7679407db9d90f747d5ca3bd1b2bb7ccbcbe41c8246cfc6d2c7bc3bc",
+      "bytes": 12732
+    },
+    {
+      "path": "fonts/fuente-04.woff2",
+      "sha256": "03bcdff46fdcba0524c012d0392a5459023955e517d185c95a038e1f1e350523",
+      "bytes": 21900
+    },
+    {
+      "path": "fonts/fuente-05.woff2",
+      "sha256": "dd02a01aa86a3d388db13495b13509af4af12551fc3aa978aceecc51b8e4c17b",
+      "bytes": 23376
+    },
+    {
+      "path": "fonts/fuente-06.woff2",
+      "sha256": "c05fd5289492ed310ed882259b944ca5287e76e572a65d92d3941f9f44f0342a",
+      "bytes": 21044
+    }
+  ]
+}
