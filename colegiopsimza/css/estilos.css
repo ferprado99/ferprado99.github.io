@@ -90,11 +90,11 @@ h2{font:normal 600 clamp(1.55rem,2.5vw,2.05rem)/1.2 var(--ui);margin:clamp(48px,
 .sequence-title{display:flex;align-items:center;justify-content:center;gap:12px;font:700 .88rem/1.4 var(--ui);letter-spacing:.04em;color:var(--acc)}
 .sequence-title svg{width:30px;height:16px}
 .sequence-title.off{margin-top:14px}
-.sequence-items{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:14px;font:600 clamp(.78rem,1vw,.95rem)/1.4 var(--ui);text-align:center}
-.sequence-items span{flex:1;min-width:0}
-.sequence-items svg{width:25px;height:16px;flex:none;color:var(--acc)}
+.sequence-items{display:grid;grid-template-columns:auto auto auto auto auto auto auto;align-items:center;justify-content:space-between;column-gap:clamp(8px,1.1vw,15px);row-gap:8px;margin-top:14px;width:100%;font:600 clamp(.84rem,1.12vw,1rem)/1.4 var(--ui);text-align:center}
+.sequence-items span{display:block;min-width:0}
+.sequence-items svg{width:28px;height:16px;flex:none;color:var(--acc)}
 .report-signature{text-align:right;font:500 .9rem/1.7 var(--ui);margin-top:85px;color:var(--mute)}
-@media(max-width:700px){.sequence-items{gap:4px;font-size:.63rem}.sequence-items svg{width:12px}.sequence{padding:14px 8px}}
+@media(max-width:700px){.sequence-items{column-gap:4px;font-size:.7rem;grid-template-columns:auto auto auto auto auto auto auto}.sequence-items svg{width:14px}.sequence{padding:14px 8px}}
 
 /* Ajustes solicitados v6 */
 .row{grid-template-columns:1fr;gap:14px;text-align:left}
