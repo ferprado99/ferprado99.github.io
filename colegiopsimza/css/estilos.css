@@ -131,3 +131,12 @@ h2{font:normal 600 clamp(1.55rem,2.5vw,2.05rem)/1.2 var(--ui);margin:clamp(48px,
 .dg>.xr{transform:translateY(-15px)}
 @media(max-width:700px){.dg>.xr{transform:translateY(-9px)}}
 .key-highlight{background:#fff0a6;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:.06em .18em;border-radius:2px}
+
+/* Modal de ampliación de fotografías de interfaces */
+.interface-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:0}
+.interface-modal[hidden]{display:none}
+.interface-modal-panel{position:relative;width:80vw;height:80vh;height:80dvh;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;box-shadow:0 18px 65px rgba(0,0,0,.32)}
+.interface-modal-panel>img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;padding:clamp(12px,2.5vw,30px)}
+.interface-modal-close{position:absolute;right:10px;top:10px;width:34px;height:34px;z-index:1;display:grid;place-items:center;border:0;background:rgba(255,255,255,.9);color:#555;font:400 24px/1 var(--ui);cursor:pointer;border-radius:50%}
+.interface-modal-close:hover,.interface-modal-close:focus-visible{background:#ececec;color:#111}
+body.interface-modal-open{overflow:hidden}
