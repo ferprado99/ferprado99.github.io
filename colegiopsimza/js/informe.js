@@ -47,8 +47,11 @@ document.querySelectorAll('.card,.row').forEach(function(el){io.observe(el)});
  overlay.setAttribute('aria-label','Fotografía ampliada de la interfaz');
  var panel=document.createElement('div');
  panel.className='interface-modal-panel';
- var photo=document.createElement('img');
- photo.alt='';
+ var frame=document.createElement('div');
+ frame.className='interface-modal-viewport';
+ var film=document.createElement('div');
+ film.className='interface-modal-film';
+ frame.appendChild(film);
  var close=document.createElement('button');
  close.type='button';
  close.className='interface-modal-close';
@@ -60,28 +63,52 @@ document.querySelectorAll('.card,.row').forEach(function(el){io.observe(el)});
  var next=document.createElement('button');
  next.type='button';next.className='interface-modal-arrow next';next.textContent='›';
  next.setAttribute('aria-label','Foto siguiente');
- panel.appendChild(photo);
+ panel.appendChild(frame);
  panel.appendChild(previous);
  panel.appendChild(next);
  panel.appendChild(close);
  overlay.appendChild(panel);
  document.body.appendChild(overlay);
- var lastFocus=null,modalImages=[],modalIndex=0;
- function displayPhoto(){var image=modalImages[modalIndex];if(!image)return;photo.src=image.src;photo.alt=image.alt||'Fotografía ampliada de interfaz de audio';}
- function movePhoto(delta){if(!modalImages.length)return;modalIndex=(modalIndex+delta+modalImages.length)%modalImages.length;displayPhoto();}
+ var lastFocus=null,modalImages=[],modalIndex=0,sliding=false;
+ function makeSlide(index){
+  var slide=document.createElement('div');slide.className='interface-modal-slide';
+  var img=document.createElement('img');
+  var image=modalImages[(index+modalImages.length)%modalImages.length];
+  img.src=image.src;img.alt=image.alt||'Fotografía ampliada de interfaz de audio';
+  slide.appendChild(img);return slide;
+ }
+ function displayPhoto(){
+  film.style.transition='none';
+  film.replaceChildren(makeSlide(modalIndex-1),makeSlide(modalIndex),makeSlide(modalIndex+1));
+  film.style.transform='translateX(-33.333333%)';
+ }
+ function movePhoto(delta){
+  if(sliding||modalImages.length<2)return;
+  sliding=true;
+  film.style.transition='transform .35s ease';
+  film.style.transform=delta>0?'translateX(-66.666667%)':'translateX(0%)';
+  var finish=function(e){
+   if(e.target!==film||e.propertyName!=='transform')return;
+   film.removeEventListener('transitionend',finish);
+   modalIndex=(modalIndex+delta+modalImages.length)%modalImages.length;
+   displayPhoto();sliding=false;
+  };
+  film.addEventListener('transitionend',finish);
+ }
  previous.addEventListener('click',function(){movePhoto(-1)});
  next.addEventListener('click',function(){movePhoto(1)});
  function hide(){
   if(overlay.hidden)return;
   overlay.hidden=true;
   document.body.classList.remove('interface-modal-open');
-  photo.removeAttribute('src');
+  film.replaceChildren();sliding=false;
   if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
  }
  function show(images,index,trigger){
   lastFocus=trigger;
   modalImages=images;
   modalIndex=index;
+  sliding=false;
   displayPhoto();
   overlay.hidden=false;
   document.body.classList.add('interface-modal-open');
