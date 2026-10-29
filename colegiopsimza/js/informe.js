@@ -36,3 +36,63 @@ document.querySelectorAll('.carousel').forEach(function(c){
 });
 var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}})},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.card,.row').forEach(function(el){io.observe(el)});
+
+/* Modal de foto completa: independiente del zoom al pasar el cursor */
+(function(){
+ var overlay=document.createElement('div');
+ overlay.className='interface-modal';
+ overlay.hidden=true;
+ overlay.setAttribute('role','dialog');
+ overlay.setAttribute('aria-modal','true');
+ overlay.setAttribute('aria-label','Fotografía ampliada de la interfaz');
+ var panel=document.createElement('div');
+ panel.className='interface-modal-panel';
+ var photo=document.createElement('img');
+ photo.alt='';
+ var close=document.createElement('button');
+ close.type='button';
+ close.className='interface-modal-close';
+ close.textContent='×';
+ close.setAttribute('aria-label','Cerrar fotografía ampliada');
+ panel.appendChild(photo);
+ panel.appendChild(close);
+ overlay.appendChild(panel);
+ document.body.appendChild(overlay);
+ var lastFocus=null;
+ function hide(){
+  if(overlay.hidden)return;
+  overlay.hidden=true;
+  document.body.classList.remove('interface-modal-open');
+  photo.removeAttribute('src');
+  if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+ }
+ function show(src,alt,trigger){
+  lastFocus=trigger;
+  photo.src=src;
+  photo.alt=alt||'Fotografía ampliada de interfaz de audio';
+  overlay.hidden=false;
+  document.body.classList.add('interface-modal-open');
+  close.focus({preventScroll:true});
+ }
+ document.querySelectorAll('.interfaces-section .carousel .vp').forEach(function(vp){
+  vp.addEventListener('click',function(){
+   var current=vp.querySelector('.track .slide img');
+   var track=vp.querySelector('.track');
+   if(track){
+    var transform=track.style.transform||'';
+    var match=transform.match(/translateX\(-?(\d+)%\)/);
+    var index=match?Math.abs(parseInt(match[1],10))/100:1;
+    var slides=track.querySelectorAll('.slide');
+    if(slides[index]&&slides[index].querySelector('img'))current=slides[index].querySelector('img');
+   }
+   if(current)show(current.currentSrc||current.src,current.alt,vp);
+  });
+  vp.setAttribute('tabindex','0');
+  vp.setAttribute('role','button');
+  vp.setAttribute('aria-label','Ampliar fotografía de interfaz');
+  vp.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();vp.click()}});
+ });
+ close.addEventListener('click',hide);
+ overlay.addEventListener('click',function(e){if(e.target===overlay)hide()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!overlay.hidden)hide()});
+})();
