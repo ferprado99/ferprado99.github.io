@@ -140,3 +140,9 @@ h2{font:normal 600 clamp(1.55rem,2.5vw,2.05rem)/1.2 var(--ui);margin:clamp(48px,
 .interface-modal-close{position:absolute;right:10px;top:10px;width:34px;height:34px;z-index:1;display:grid;place-items:center;border:0;background:rgba(255,255,255,.9);color:#555;font:400 24px/1 var(--ui);cursor:pointer;border-radius:50%}
 .interface-modal-close:hover,.interface-modal-close:focus-visible{background:#ececec;color:#111}
 body.interface-modal-open{overflow:hidden}
+
+/* Flechas discretas del carrusel dentro del modal */
+.interface-modal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:44px;display:grid;place-items:center;border:0;background:rgba(255,255,255,.76);color:#555;font:400 30px/1 var(--ui);cursor:pointer;border-radius:5px;z-index:1}
+.interface-modal-arrow.previous{left:8px}
+.interface-modal-arrow.next{right:8px}
+.interface-modal-arrow:hover,.interface-modal-arrow:focus-visible{background:#eee;color:#111}
