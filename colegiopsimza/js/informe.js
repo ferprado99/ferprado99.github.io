@@ -95,6 +95,19 @@ document.querySelectorAll('.card,.row').forEach(function(el){io.observe(el)});
   };
   film.addEventListener('transitionend',finish);
  }
+ var touchX=null,touchY=null;
+ frame.addEventListener('touchstart',function(e){
+  if(e.touches.length!==1){touchX=null;return;}
+  touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;
+ },{passive:true});
+ frame.addEventListener('touchend',function(e){
+  if(touchX===null||!e.changedTouches.length)return;
+  var dx=e.changedTouches[0].clientX-touchX;
+  var dy=e.changedTouches[0].clientY-touchY;
+  touchX=null;touchY=null;
+  if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.2)movePhoto(dx<0?1:-1);
+ },{passive:true});
+ frame.addEventListener('touchcancel',function(){touchX=null;touchY=null});
  previous.addEventListener('click',function(){movePhoto(-1)});
  next.addEventListener('click',function(){movePhoto(1)});
  function hide(){
