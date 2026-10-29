@@ -136,7 +136,10 @@ h2{font:normal 600 clamp(1.55rem,2.5vw,2.05rem)/1.2 var(--ui);margin:clamp(48px,
 .interface-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:0}
 .interface-modal[hidden]{display:none}
 .interface-modal-panel{position:relative;width:80vw;height:80vh;height:80dvh;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;box-shadow:0 18px 65px rgba(0,0,0,.32)}
-.interface-modal-panel>img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;padding:clamp(12px,2.5vw,30px)}
+.interface-modal-viewport{width:100%;height:100%;overflow:hidden;border-radius:8px}
+.interface-modal-film{height:100%;width:300%;display:flex;transform:translateX(-33.333333%);will-change:transform}
+.interface-modal-slide{height:100%;width:33.333333%;flex:0 0 33.333333%;display:flex;align-items:center;justify-content:center;min-width:0}
+.interface-modal-slide img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;padding:clamp(12px,2.5vw,30px)}
 .interface-modal-close{position:absolute;right:10px;top:10px;width:34px;height:34px;z-index:1;display:grid;place-items:center;border:0;background:rgba(255,255,255,.9);color:#555;font:400 24px/1 var(--ui);cursor:pointer;border-radius:50%}
 .interface-modal-close:hover,.interface-modal-close:focus-visible{background:#ececec;color:#111}
 body.interface-modal-open{overflow:hidden}
@@ -146,3 +149,6 @@ body.interface-modal-open{overflow:hidden}
 .interface-modal-arrow.previous{left:8px}
 .interface-modal-arrow.next{right:8px}
 .interface-modal-arrow:hover,.interface-modal-arrow:focus-visible{background:#eee;color:#111}
+
+/* Ajuste exclusivo del modal para pantallas pequeñas */
+@media(max-width:700px){.interface-modal-panel{width:92vw;height:min(56dvh,75vw);max-height:80dvh}.interface-modal-slide img{padding:14px 28px}.interface-modal-close{right:6px;top:6px;width:30px;height:30px;font-size:21px}.interface-modal-arrow.previous{left:2px}.interface-modal-arrow.next{right:2px}}
